@@ -10,13 +10,8 @@ namespace Upstream {
 
 // It's not sufficient to use trace level logging, since it becomes far too noisy for a number of
 // tests, so we can kill trace debug here.
-#define EDF_DEBUG 0
 
-#if EDF_DEBUG
-#define EDF_TRACE(fmt...) ENVOY_LOG_MISC(trace, fmt)
-#else
-#define EDF_TRACE(fmt...)
-#endif
+#define EDF_TRACE(fmt...) ENVOY_LOG_JACOB(trace, fmt)
 
 // Earliest Deadline First (EDF) scheduler
 // (https://en.wikipedia.org/wiki/Earliest_deadline_first_scheduling) used for weighted round robin.

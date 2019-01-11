@@ -36,6 +36,7 @@ namespace Logger {
   FUNCTION(http)                 \
   FUNCTION(http2)                \
   FUNCTION(hystrix)              \
+  FUNCTION(jacob)                \
   FUNCTION(lua)                  \
   FUNCTION(main)                 \
   FUNCTION(misc)                 \
@@ -328,6 +329,8 @@ protected:
  */
 #define GET_MISC_LOGGER() Logger::Registry::getLog(Logger::Id::misc)
 #define ENVOY_LOG_MISC(LEVEL, ...) ENVOY_LOG_TO_LOGGER(GET_MISC_LOGGER(), LEVEL, ##__VA_ARGS__)
+#define GET_JACOB_LOGGER() Logger::Registry::getLog(Logger::Id::jacob)
+#define ENVOY_LOG_JACOB(LEVEL, ...) ENVOY_LOG_TO_LOGGER(GET_JACOB_LOGGER(), LEVEL, ##__VA_ARGS__)
 
 /**
  * Convenience macros for logging with connection ID.
